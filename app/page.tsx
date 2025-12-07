@@ -3,8 +3,8 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { supabase } from "@/lib/supabase";
-import { signOut } from "@/lib/auth";
+import { supabase } from "../lib/supabase";
+import { signOut } from "../lib/auth";
 
 interface Chat {
   id: string;
