@@ -6,8 +6,13 @@ import { useRouter, useParams, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { supabase } from "../../../lib/supabase";
+import { createClient } from '@supabase/supabase-js';
 import { signOut } from "../../../lib/auth";
+
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://vmdqzjiweylmhzfgnbmy.supabase.co';
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZtZHF6aml3ZXlsbWh6ZmduYm15Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUxMDc0NzgsImV4cCI6MjA4MDY4MzQ3OH0.Yi42pDFkawv0hFhA56yp82tMHIOlxt3vLiKduXH3h1w';
+
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 interface Message {
   id: string;
