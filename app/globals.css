@@ -19,8 +19,239 @@
   }
 }
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(156, 163, 175, 0.5);
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(156, 163, 175, 0.7);
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Плавные анимации */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-from-bottom {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-from-top {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-from-left {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-in {
+  animation: fade-in 0.4s ease-out;
+}
+
+.fade-in {
+  animation: fade-in 0.4s ease-out;
+}
+
+.slide-in-from-bottom-2 {
+  animation: slide-in-from-bottom 0.3s ease-out;
+}
+
+.slide-in-from-bottom-4 {
+  animation: slide-in-from-bottom 0.5s ease-out;
+}
+
+.slide-in-from-top-2 {
+  animation: slide-in-from-top 0.3s ease-out;
+}
+
+.slide-in-from-left {
+  animation: slide-in-from-left 0.3s ease-out;
+}
+
+.scale-in {
+  animation: scale-in 0.3s ease-out;
+}
+
+/* Markdown стили для сообщений */
+.markdown-content {
+  line-height: 1.7;
+}
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4 {
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.markdown-content h1 {
+  font-size: 1.875rem;
+  border-bottom: 1px solid rgba(156, 163, 175, 0.3);
+  padding-bottom: 0.5em;
+}
+
+.markdown-content h2 {
+  font-size: 1.5rem;
+}
+
+.markdown-content h3 {
+  font-size: 1.25rem;
+}
+
+.markdown-content p {
+  margin-bottom: 1em;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  margin: 1em 0;
+  padding-left: 1.5em;
+}
+
+.markdown-content li {
+  margin: 0.5em 0;
+}
+
+.markdown-content code {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+  font-family: var(--font-geist-mono), monospace;
+}
+
+.dark .markdown-content code {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.markdown-content pre {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 1em;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 1em 0;
+}
+
+.dark .markdown-content pre {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.markdown-content pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.markdown-content blockquote {
+  border-left: 4px solid rgba(59, 130, 246, 0.5);
+  padding-left: 1em;
+  margin: 1em 0;
+  color: rgba(107, 114, 128, 1);
+}
+
+.dark .markdown-content blockquote {
+  color: rgba(156, 163, 175, 1);
+}
+
+.markdown-content a {
+  color: rgb(59, 130, 246);
+  text-decoration: underline;
+}
+
+.markdown-content a:hover {
+  color: rgb(37, 99, 235);
+}
+
+.markdown-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+
+.markdown-content th,
+.markdown-content td {
+  border: 1px solid rgba(156, 163, 175, 0.3);
+  padding: 0.5em;
+  text-align: left;
+}
+
+.markdown-content th {
+  background: rgba(0, 0, 0, 0.05);
+  font-weight: 600;
+}
+
+.dark .markdown-content th {
+  background: rgba(255, 255, 255, 0.05);
 }

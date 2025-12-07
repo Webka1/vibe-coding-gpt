@@ -1,5 +1,11 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## О проекте
+
+Это приложение было создано для тестирования с использованием [Cursor AI](https://cursor.sh) - AI-ассистента для разработки кода.
+
+Приложение представляет собой чат-интерфейс с поддержкой различных AI-моделей, интегрированный с Supabase для аутентификации и хранения данных.
+
 ## Getting Started
 
 First, run the development server:
